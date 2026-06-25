@@ -1,0 +1,75 @@
+<div class="page" id="page-refrigerator">
+  <div class="page-header">
+    <div>
+      <div class="page-h1">❄ Refrigerator Monitoring</div>
+      <div class="page-sub">Zone 2 · MAX31865 + PT100 · SHT35 · Threshold: 0–5°C / 50–70% RH</div>
+    </div>
+    <div class="status-pill pill-warning" style="font-size:12px;padding:6px 14px">⚠ Warning</div>
+  </div>
+  <div class="mini-stats">
+    <div class="mini-stat">
+      <div class="mini-stat-label">Current Temperature</div>
+      <div class="mini-stat-val" style="color:var(--cyan)" id="rf-detail-temp">2.5°C</div>
+      <div class="mini-stat-sub">Threshold: 0°C – 5°C</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Current Humidity</div>
+      <div class="mini-stat-val" style="color:var(--amber)">74%</div>
+      <div class="mini-stat-sub" style="color:var(--amber)">⚠ Above threshold (70%)</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Compressor Status</div>
+      <div class="mini-stat-val" style="color:var(--green);font-size:14px">● Active</div>
+      <div class="mini-stat-sub">Current: 4.2A</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Cooling Status</div>
+      <div class="mini-stat-val" style="color:var(--cyan);font-size:14px">Running</div>
+      <div class="mini-stat-sub">Uptime: 4h 32m</div>
+    </div>
+  </div>
+  <div class="detail-grid">
+    <div class="card">
+      <div class="card-header"><div class="card-title"><i class="fas fa-thermometer-half"></i> Temperature Gauge</div></div>
+      <div class="card-body" style="text-align:center;padding:20px">
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 100 100">
+            <circle class="gauge-bg" cx="50" cy="50" r="40"/>
+            <circle class="gauge-fill" cx="50" cy="50" r="40" stroke="#00D4FF"
+              stroke-dasharray="251.2" stroke-dashoffset="125"/>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-num" style="color:var(--cyan)">2.5</div>
+            <div class="gauge-unit">°C</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary)">Safe range: 0°C – 5°C</div>
+      </div>
+    </div>
+    <div class="card" style="border-color:#FFAA0044">
+      <div class="card-header"><div class="card-title"><i class="fas fa-droplet"></i> Humidity Gauge</div><span style="font-size:11px;color:var(--amber)">⚠ High</span></div>
+      <div class="card-body" style="text-align:center;padding:20px">
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 100 100">
+            <circle class="gauge-bg" cx="50" cy="50" r="40"/>
+            <circle class="gauge-fill" cx="50" cy="50" r="40" stroke="#FFAA00"
+              stroke-dasharray="251.2" stroke-dashoffset="63"/>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-num" style="color:var(--amber)">74</div>
+            <div class="gauge-unit">% RH</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--amber)">⚠ Exceeds max threshold (70%)</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><i class="fas fa-chart-area"></i> Historical Trend — Refrigerator</div>
+    </div>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="rfChart"></canvas>
+    </div>
+  </div>
+</div>

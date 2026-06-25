@@ -1,0 +1,16 @@
+<div class="topbar">
+  <div class="topbar-title">Smart Cold Storage &amp; Refrigerator <span>Monitoring System</span></div>
+  <div class="topbar-right">
+    <div class="topbar-time" id="topbar-clock">--:-- --</div>
+    <div class="topbar-btn" title="Notifications" onclick="showPage('alerts', document.querySelector('[onclick*=alerts]'))">
+      <i class="fas fa-bell"></i>
+      <div class="notif-dot" id="notif-dot"></div>
+    </div>
+    <div class="topbar-btn" title="Refresh" onclick="refreshData()">
+      <i class="fas fa-rotate-right"></i>
+    </div>
+    <div class="topbar-btn" id="theme-toggle" title="Toggle theme" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+    </div>
+  </div>
+</div>

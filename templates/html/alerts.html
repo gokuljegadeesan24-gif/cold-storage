@@ -1,0 +1,84 @@
+<div class="page" id="page-alerts">
+  <div class="page-header">
+    <div>
+      <div class="page-h1">🚨 Alerts &amp; Notifications</div>
+      <div class="page-sub">Real-time alert monitoring · Buzzer triggered on threshold breach</div>
+    </div>
+    <button class="log-btn" onclick="clearAlerts()"><i class="fas fa-check-double"></i> Acknowledge All</button>
+  </div>
+  <div class="mini-stats">
+    <div class="mini-stat">
+      <div class="mini-stat-label">Open Alerts</div>
+      <div class="mini-stat-val" style="color:var(--red)" id="open-alert-count">1</div>
+      <div class="mini-stat-sub">Requires action</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Critical</div>
+      <div class="mini-stat-val" style="color:var(--red)">1</div>
+      <div class="mini-stat-sub">High priority</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Warnings</div>
+      <div class="mini-stat-val" style="color:var(--amber)">1</div>
+      <div class="mini-stat-sub">Monitor closely</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Resolved Today</div>
+      <div class="mini-stat-val" style="color:var(--green)">2</div>
+      <div class="mini-stat-sub">Closed alerts</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><i class="fas fa-bell"></i> All Alerts</div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="alert-table" style="min-width:600px">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date / Time</th>
+            <th>Zone</th>
+            <th>Alert Type</th>
+            <th>Value</th>
+            <th>Threshold</th>
+            <th>Severity</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="full-alert-table">
+          <tr>
+            <td style="color:var(--text-dim)">001</td>
+            <td style="font-family:var(--font-data);font-size:11px;color:var(--text-dim)">Today 10:15 AM</td>
+            <td>Cold Storage</td>
+            <td><span class="alert-type">High Temperature</span></td>
+            <td style="font-family:var(--font-data);color:var(--red)">9.1°C</td>
+            <td style="font-family:var(--font-data);color:var(--text-dim)">≤ 8°C</td>
+            <td><span class="sev-badge sev-critical">Critical</span></td>
+            <td><span class="stat-open">● Open</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim)">002</td>
+            <td style="font-family:var(--font-data);font-size:11px;color:var(--text-dim)">Today 09:50 AM</td>
+            <td>Refrigerator</td>
+            <td><span class="alert-type">Humidity High</span></td>
+            <td style="font-family:var(--font-data);color:var(--amber)">74%</td>
+            <td style="font-family:var(--font-data);color:var(--text-dim)">≤ 70%</td>
+            <td><span class="sev-badge sev-medium">Medium</span></td>
+            <td><span class="stat-closed">● Closed</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim)">003</td>
+            <td style="font-family:var(--font-data);font-size:11px;color:var(--text-dim)">Today 08:32 AM</td>
+            <td>ESP8266</td>
+            <td><span class="alert-type">WiFi Reconnect</span></td>
+            <td style="font-family:var(--font-data);color:var(--text-secondary)">—</td>
+            <td style="font-family:var(--font-data);color:var(--text-dim)">—</td>
+            <td><span class="sev-badge sev-low">Low</span></td>
+            <td><span class="stat-closed">● Closed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="page" id="page-datalogs">
+  <div class="page-header">
+    <div>
+      <div class="page-h1">📁 Data Logs</div>
+      <div class="page-sub">Sensor readings logged every 10 seconds · Export as CSV</div>
+    </div>
+    <div class="page-actions">
+      <button class="log-btn" onclick="exportCSV()"><i class="fas fa-download"></i> Export CSV</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><i class="fas fa-database"></i> Sensor Log Records</div>
+      <span style="font-size:11px;color:var(--text-secondary)" id="log-count">Showing 20 records</span>
+    </div>
+    <div class="card-body">
+      <div class="log-controls">
+        <input class="log-input" placeholder="🔍 Search logs..." style="flex:1" id="log-search" oninput="filterLogs()">
+        <select class="log-input" id="log-zone" onchange="filterLogs()">
+          <option value="all">All Zones</option>
+          <option value="Cold Storage">Cold Storage</option>
+          <option value="Refrigerator">Refrigerator</option>
+        </select>
+        <input class="log-input" type="date" id="log-date" onchange="filterLogs()" title="Filter logs by date">
+      </div>
+      <div style="overflow-x:auto">
+        <table class="log-table" style="min-width:650px">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Timestamp</th>
+              <th>Zone</th>
+              <th>Temperature</th>
+              <th>Humidity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="log-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

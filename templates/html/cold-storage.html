@@ -1,0 +1,90 @@
+<div class="page" id="page-cold-storage">
+  <div class="page-header">
+    <div>
+      <div class="page-h1">🏭 Cold Storage Monitoring</div>
+      <div class="page-sub">Zone 1 · MAX31865 + PT100 · SHT35 · Threshold: 2–8°C / 50–70% RH</div>
+    </div>
+    <div class="status-pill pill-normal" style="font-size:12px;padding:6px 14px">● Normal</div>
+  </div>
+  <div class="mini-stats">
+    <div class="mini-stat">
+      <div class="mini-stat-label">Current Temperature</div>
+      <div class="mini-stat-val" style="color:var(--cyan)" id="cs-detail-temp">4.2°C</div>
+      <div class="mini-stat-sub">Threshold: 2°C – 8°C</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Current Humidity</div>
+      <div class="mini-stat-val" style="color:var(--purple)" id="cs-detail-hum">68%</div>
+      <div class="mini-stat-sub">Threshold: 50% – 70%</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Min Temp (24h)</div>
+      <div class="mini-stat-val" style="color:var(--cyan)">3.1°C</div>
+      <div class="mini-stat-sub">Recorded at 03:15 AM</div>
+    </div>
+    <div class="mini-stat">
+      <div class="mini-stat-label">Max Temp (24h)</div>
+      <div class="mini-stat-val" style="color:var(--amber)">6.8°C</div>
+      <div class="mini-stat-sub">Recorded at 10:15 AM</div>
+    </div>
+  </div>
+  <div class="detail-grid">
+    <div class="card">
+      <div class="card-header"><div class="card-title"><i class="fas fa-thermometer-half"></i> Temperature Gauge</div></div>
+      <div class="card-body" style="text-align:center;padding:20px">
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 100 100">
+            <circle class="gauge-bg" cx="50" cy="50" r="40"/>
+            <circle class="gauge-fill" cx="50" cy="50" r="40" stroke="#00D4FF"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="118" id="cs-gauge-fill"/>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-num" style="color:var(--cyan)" id="cs-gauge-num">4.2</div>
+            <div class="gauge-unit">°C</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary)">Safe range: 2°C – 8°C</div>
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;font-size:11px;">
+          <span style="color:var(--text-dim)">Min: <span style="color:var(--cyan);font-family:var(--font-data)">2°C</span></span>
+          <span style="color:var(--text-dim)">Max: <span style="color:var(--cyan);font-family:var(--font-data)">8°C</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title"><i class="fas fa-droplet"></i> Humidity Gauge</div></div>
+      <div class="card-body" style="text-align:center;padding:20px">
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 100 100">
+            <circle class="gauge-bg" cx="50" cy="50" r="40"/>
+            <circle class="gauge-fill" cx="50" cy="50" r="40" stroke="#7C5CFC"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="80" id="cs-hum-gauge-fill"/>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-num" style="color:var(--purple)" id="cs-gauge-hum-num">68</div>
+            <div class="gauge-unit">% RH</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary)">Safe range: 50% – 70%</div>
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;font-size:11px;">
+          <span style="color:var(--text-dim)">Min: <span style="color:var(--purple);font-family:var(--font-data)">50%</span></span>
+          <span style="color:var(--text-dim)">Max: <span style="color:var(--purple);font-family:var(--font-data)">70%</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><i class="fas fa-chart-area"></i> Historical Trend — Cold Storage</div>
+      <div class="chart-tabs">
+        <div class="chart-tab active">1 Hour</div>
+        <div class="chart-tab">24 Hours</div>
+        <div class="chart-tab">7 Days</div>
+      </div>
+    </div>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="csChart"></canvas>
+    </div>
+  </div>
+</div>

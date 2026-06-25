@@ -1,0 +1,48 @@
+<div class="page" id="page-analytics">
+  <div class="page-header">
+    <div>
+      <div class="page-h1">📊 Analytics</div>
+      <div class="page-sub">Temperature &amp; humidity trends · Daily, weekly, monthly reports</div>
+    </div>
+  </div>
+  <div class="analytics-grid">
+    <div class="an-card">
+      <div class="an-label">Avg Temp — Cold Storage (24h)</div>
+      <div class="an-val" style="color:var(--cyan)">4.6°C</div>
+      <div class="an-sub an-up"><i class="fas fa-arrow-up"></i> +0.3°C vs yesterday</div>
+    </div>
+    <div class="an-card">
+      <div class="an-label">Avg Humidity — Cold Storage (24h)</div>
+      <div class="an-val" style="color:var(--purple)">66%</div>
+      <div class="an-sub an-down"><i class="fas fa-arrow-down"></i> -2% vs yesterday</div>
+    </div>
+    <div class="an-card">
+      <div class="an-label">Avg Temp — Refrigerator (24h)</div>
+      <div class="an-val" style="color:var(--cyan)">2.8°C</div>
+      <div class="an-sub an-up"><i class="fas fa-arrow-up"></i> +0.1°C vs yesterday</div>
+    </div>
+    <div class="an-card">
+      <div class="an-label">Total Alerts (7 days)</div>
+      <div class="an-val" style="color:var(--amber)">8</div>
+      <div class="an-sub an-down"><i class="fas fa-arrow-down"></i> -3 vs last week</div>
+    </div>
+    <div class="an-card">
+      <div class="an-label">Sensor Uptime</div>
+      <div class="an-val" style="color:var(--green)">99.2%</div>
+      <div class="an-sub" style="color:var(--text-dim)">Last 30 days</div>
+    </div>
+    <div class="an-card">
+      <div class="an-label">Data Points Logged</div>
+      <div class="an-val" style="color:var(--text-primary)">8,640</div>
+      <div class="an-sub" style="color:var(--text-dim)">Every 10s · 24 hours</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><i class="fas fa-chart-bar"></i> 7-Day Temperature Overview</div>
+    </div>
+    <div class="chart-wrap" style="height:220px">
+      <canvas id="analyticsChart"></canvas>
+    </div>
+  </div>
+</div>
