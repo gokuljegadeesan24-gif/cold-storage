@@ -540,5 +540,4 @@
     text-align: center; padding: 40px 20px;
     color: var(--text-dim);
   }
-  .empty-state i { font-size: 32px; margin-bottom: 10px; display: block; }
-  .empty-state p { font-size: 13px; }
+
